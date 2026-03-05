@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'library.apps.LibraryConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,9 @@ if env.bool('USE_REMOTE'):
             'PASSWORD': env.str("DB_PASSWORD"),
             'HOST': env.str("DB_HOST"),
             'PORT': env.str("DB_PORT"),
+            'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'",
+            },
         }
     }
 else:
