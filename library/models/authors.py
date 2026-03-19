@@ -5,16 +5,16 @@ from django.db import models
 
 
 class Author(models.Model):
-    name: str = models.CharField(
+    name = models.CharField(
         max_length=100,
         verbose_name="Имя"
     )
-    surname: str = models.CharField(
+    surname = models.CharField(
         max_length=100,
         verbose_name="Фамилия"
 
     )
-    date_for_birth: datetime = models.DateTimeField(
+    date_for_birth = models.DateTimeField(
         verbose_name="Дата рождения"
 
     )
@@ -41,3 +41,6 @@ class Author(models.Model):
         verbose_name="Рейтинг"
 
     )
+
+    def __str__(self):
+        return f"{self.surname} {self.name[0]} ({self.rating})"

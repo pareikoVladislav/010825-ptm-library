@@ -23,7 +23,6 @@ class Migration(migrations.Migration):
                 ('age', models.IntegerField(validators=[django.core.validators.MinValueValidator(6), django.core.validators.MaxValueValidator(120)], verbose_name='Возраст')),
                 ('role', models.CharField(choices=[('admin', 'Админ'), ('staff', 'Сотрудник'), ('member', 'Читатель')], max_length=20, verbose_name='Роль')),
                 ('is_active', models.BooleanField(default=True, verbose_name='Активный')),
-                ('libraries', models.ManyToManyField(to='library.library', verbose_name='Библиотеки')),
             ],
         ),
     ]
