@@ -1,5 +1,5 @@
-from library.serializers.categories import CategorySerializer
+from library.serializers.category import CategorySerializer
 
 __all__ = [
-    'CategorySerializer'
+    'CategorySerializer',
 ]
