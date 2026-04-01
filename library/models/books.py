@@ -41,7 +41,18 @@ class Book(models.Model):
         choices=CHOICE_GENRE,
         default='N/A'
     )
-
+    price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+    discounted_price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
     pages = models.PositiveSmallIntegerField(
         validators=[MaxValueValidator(10000)],
         verbose_name="кол-во страниц",
